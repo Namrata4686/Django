@@ -44,6 +44,11 @@ input[type=submit]{
 <body>
 <center>
 <h3>Student Registration</h3></center>
+<form action="signup" method="post">
+   {% csrf_token %}
+   {% for message in messages %}
+   {{message}}
+   {%endfor%}
 <table align="center" cellpadding = "10">
 <!--------------------- First Name ------------------------------------------>
 <tr>
@@ -171,19 +176,24 @@ input[type=submit]{
 </select>
 </td>
 </tr>
-
-  <!-------------------------passward--------------------------->
+<!-------------------------UserName--------------------------->
+  <tr>
+    <td>Username</td>
+    <td><input type="text" name="username" placeholder="set username"/></td>
+  </tr>
+    <!-------------------------passward--------------------------->
   <tr>
     <td>Password</td>
-    <td><input type="password" placeholder="set password"/></td>
+    <td><input type="Password" name="password" placeholder="set password"/></td>
   </tr>
 <!----------------------- Submit and login ------------------------------->
 <tr>
 <td colspan="2" align="center">
-<input type="submit" value="Submit">
-    <a href="login.html"> Go To Login </a>
+<input type="submit">
+  <a href="login">Go To Login</a>
 </td>
 </tr>
 </table>
+</form>
 </body>
 </html>

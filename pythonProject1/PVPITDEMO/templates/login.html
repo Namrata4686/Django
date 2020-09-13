@@ -64,16 +64,21 @@
         <center><h3>Student Login</h3></center><br><br>
         <center>
           <h3></h3>
-            <form action="">
+            <form action="login" method="post">
+                 {% csrf_token %}
+                 {% for message in messages %}
+                 {{message}}
+                 {%endfor%}
+
               <br><br><br>
-                <label>Username / Email-ID</label>
-                <input type="email" name="username" />
+                <label>Username</label>
+                <input type="text" name="user" />
               <br><br><br>
                 <label>Password</label>
-                <input type="password" name="password"  /><br><br><br>
+                <input type="password" name="pass"  /><br><br><br>
                 <input type="submit" value="Login" align="center"/>
               <br>
-              <a href="signup.html">Create New Account</a>
+              <a href="signup">Create New Account</a>
             </form>
         </center>
    </body>

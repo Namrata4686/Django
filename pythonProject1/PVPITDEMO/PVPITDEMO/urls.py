@@ -21,8 +21,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
-    path('login.html',views.login,name='login'),
-    path('signup.html',views.signup,name='signup'),
-    path('Dashboard.html',views.dashboard,name='dashboard'),
-    path('home.jfif',views.homeimg,name='homeimg')
+    path('login',views.login,name='login'),
+    path('signup',views.signup,name='signup'),
+    path('Dashboard',views.dashboard,name='dashboard'),
+    #path('Datastore/', include('Datastore.urls')),
 ]
